@@ -21,10 +21,13 @@ var Ajax = function(){
 
 var app = {
 	getLero:function(){
-		Ajax.get('http://geradordelerolero.herokuapp.com/generate', this.glue);
+		// document.body.style.backgroundColor="red";
+		console.log(document.domain); 
+		//console.log(window.location);
+		// Ajax.get('http://geradordelerolero.herokuapp.com/generate', app.glue);
 	},
 	glue:function(r){
-		console.log(r);
+		console.log(window.location);
 	}
 }
 

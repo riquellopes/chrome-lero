@@ -13,6 +13,5 @@
       "default_title": "LeroLero on Facebook"
   },
   "icons": { "128": "platao.png" },
-  "permissions": ["http://geradordelerolero.herokuapp.com/"]
-
+  "permissions": ["http://geradordelerolero.herokuapp.com/", "https://www.facebook.com/"]
 }
