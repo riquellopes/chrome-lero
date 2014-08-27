@@ -20,14 +20,20 @@ var Ajax = function(){
 }();
 
 var app = {
-	getLero:function(){
-		// document.body.style.backgroundColor="red";
-		console.log(document.domain); 
-		//console.log(window.location);
-		// Ajax.get('http://geradordelerolero.herokuapp.com/generate', app.glue);
+	tab:null,
+	getLero:function(tab){
+		app.tab = tab;
+		Ajax.get('http://geradordelerolero.herokuapp.com/generate', app.glue);
 	},
 	glue:function(r){
-		console.log(window.location);
+		app.clean();
+		app.sendMessage(r.text);
+	},
+	clean:function(){
+		app.sendMessage("");
+	},
+	sendMessage:function(msg){
+		chrome.tabs.executeScript(app.tab.id, {code:'document.getElementsByClassName( "uiTextareaAutogrow input mentionsTextarea textInput" )[0].value = "'+msg+'";'});
 	}
 }
 
