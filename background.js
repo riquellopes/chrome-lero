@@ -1,4 +1,5 @@
 //https://developer.chrome.com/extensions/xhr
+"use strict";
 var Ajax = function(){
 	var request = new XMLHttpRequest();
 	return {
@@ -23,7 +24,12 @@ var app = {
 	tab:null,
 	getLero:function(tab){
 		app.tab = tab;
-		Ajax.get('http://geradordelerolero.herokuapp.com/generate', app.glue);
+		//chrome.browserAction.setBadgeText({text: 'load'}); 
+		//chrome.extension.getURL('app.html')
+		//alert("");
+		//Ajax.get('http://geradordelerolero.herokuapp.com/generate', app.glue);
+
+		chrome.browserAction.setPopup({popup:"app.html"});
 	},
 	glue:function(r){
 		app.clean();
