@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-		<style>
+		<!--<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>-->
+		<!--<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>-->
+		<!--<style>
 			#text-view{
 				font-family: 'Pacifico', cursive;
 			}
-		</style>
-		<script src="app.js"></script>
+		</style>-->
+		<!--<script src="app.js"></script>-->
 	</head>	
 	<body>
 		<div id='content-display'>
 			<img src='platao.png'>
 			<p id='text-view'></p>	
-			<textarea id='text-hide' style='display:none;'></textarea>
+			<textarea id='text-hide' style='display:nones;'></textarea>
 			<ul>
 				<li>
-					<a id='copy' href='#'>copy</a>
+					<button name='copy' id='copy' title="Copie a frase para o ClipBoard">copy</button>
 				</li>
 				<li>
-					<a id='news' href='#'>news</a>
+					<a id='_new' href='#'>news</a>
 				</li>
 			</ul>
 		</div>
+	<script src='ZeroClipboard.js' charset="utf-8"></script>
+	<script src="app.js"></script>
 	</body>
 </html>

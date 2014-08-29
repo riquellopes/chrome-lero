@@ -57,17 +57,50 @@ var Ajax = function(){
 var app = {
 	o:null,
 	init:function(){
-		document.getElementById('news').addEventListener('click', app.news, false);
-		document.getElementById('copy').addEventListener('click', app.copy, false);
+		ZeroClipboard.setMoviePath('http://davidwalsh.name/dw-content/ZeroClipboard.swf');
+		var c = new ZeroClipboard.Client();
+			
+			c.addEventListener('mousedown',function() {
+				alert('')
+				//c.setText(document.getElementById('text-hide').value);
+			});
+	
+			c.addEventListener('complete',function(client,text) {
+				alert('');
+				//alert('copied: ' + text);
+			});
+			
+			//glue it to the button
+			c.glue('copy');
+		//return ;
+		//var c = new ZeroClipboard( document.getElementById('copy-button') );
+			
+			//c.on( "ready", function( readyEvent ) {
+				 // alert( "ZeroClipboard SWF is ready!" );
+
+				  //c.on( "aftercopy", function( event ) {
+					// `this` === `client`
+					// `event.target` === the element that was clicked
+					//event.target.style.display = "none";
+					//alert("Copied text to clipboard: " + event.data["text/plain"] );
+					//alert('sss');
+				  //});
+			//});
+			
+		//console.log( client );
+		//return ;
+		//document.getElementById('_new').addEventListener('click', app._new, false);
+		//document.getElementById('_copy').addEventListener('click', app._copy, false);
 		
-		app.news();
+		//app._new();
 	},
-	copy:function(){
+	_copy:function(e){
 		document.getElementById("text-hide").select();
 		document.execCommand("Copy", false, null);
-		
+		//copy(app.o.text);
+		//console.log(app.o);
 	},
-	news:function(){
+	_new:function(){
 		Ajax.get('http://geradordelerolero.herokuapp.com/generate', function(r){
 			app.o = r;
 			app.display();
