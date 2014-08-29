@@ -1,17 +1,23 @@
 {
   "name": "Gerador de LeroLero on Facebook",
   "description": "Compartilhe pensamentos filos&oacute;ficos com seus amigos do facebook.",
-  "version": "0.1",
+  "version": "1.0",
   "manifest_version":2,
   "author":"Henrique Lopes",
   "browser_action": {
       "default_icon": "platao.png",
-      "default_title": "LeroLero on Facebook"
-  },
-  "background":{
-	"scripts":["background.js"],
-	"persistent":false
+      "default_title": "LeroLero on Facebook",
+	  "default_popup": "popup.html"
   },
   "icons": { "128": "platao.png" },
-  "permissions": ["http://geradordelerolero.herokuapp.com/", "https://www.facebook.com/"]
+  "permissions": [
+		"http://*/*", 
+		"https://*/*", 
+		"tabs", 
+		"background", 
+		"http://geradordelerolero.herokuapp.com/generate",
+		"clipboardWrite",
+		"clipboardRead"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
