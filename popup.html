@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!--<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>-->
-		<!--<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>-->
-		<!--<style>
-			#text-view{
-				font-family: 'Pacifico', cursive;
+		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<script src="app.js"></script>
+		<style>
+			body{
+				width:300px;
+				height:300px;
 			}
-		</style>-->
-		<!--<script src="app.js"></script>-->
+			textarea{
+				font-family: 'Pacifico', cursive;
+				overflow:hidden;
+				resize:none;
+				border:0;
+				width:100%;
+				height:90px;
+				font-size:13px;
+			}
+			::selection {
+			    background-color: white;
+			    color: black;
+			}
+			textarea:focus { 
+			    outline: none !important;
+			    border-color: #719ECE;
+			}
+		</style>
 	</head>	
 	<body>
 		<div id='content-display'>
-			<img src='platao.png'>
-			<p id='text-view'></p>	
-			<textarea id='text-hide' style='display:nones;'></textarea>
-			<ul>
-				<li>
-					<button name='copy' id='copy' title="Copie a frase para o ClipBoard">copy</button>
-				</li>
-				<li>
-					<a id='_new' href='#'>news</a>
-				</li>
-			</ul>
+			<img src='platao.png'><br />
+			<textarea id='text' readonly></textarea>
+			<!--<p>compartilhado: <span id='number'></span></p>-->
+			<button name='copy' id='copy' title="Copie a frase para o ClipBoard">copy</button>
+			<button id='_new'>news</button>
 		</div>
-	<script src='ZeroClipboard.js' charset="utf-8"></script>
-	<script src="app.js"></script>
 	</body>
 </html>
