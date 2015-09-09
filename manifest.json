@@ -1,7 +1,7 @@
 {
-  "name": "Gerador de LeroLero on Facebook",
-  "description": "Compartilhe pensamentos filos&oacute;ficos com seus amigos do facebook.",
-  "version": "1.0",
+  "name": "Gerador de LeroLero",
+  "description": "Compartilhe pensamentos filosóficos com seus amigos no facebook, twitter, gplus, whatsapp, etc...",
+  "version": "1.0.1",
   "manifest_version":2,
   "author":"Henrique Lopes",
   "browser_action": {
@@ -11,9 +11,6 @@
   },
   "icons": { "128": "platao.png" },
   "permissions": [
-		"http://*/*", 
-		"https://*/*", 
-		"tabs", 
 		"background", 
 		"http://geradordelerolero.herokuapp.com/generate",
 		"clipboardWrite",
